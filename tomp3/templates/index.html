@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+ <div id="content">
+  <a href="/"><img id="logo" src="/static/images/logo.png" alt=""></a>   
+  <div id="converter_wrapper">
+   <div id="converter">
+    <div id="title">
+     请粘贴优酷视频网页的URL地址
+    </div>   
+ </script>
+    <form action="/convert" method="post">
+    {% csrf_token %}
+     <input id="input" type="text" name="video">
+     <input id="submit" type="submit"  onclick="clickConvert();return false;" value="转换">
+      {% if error %}
+      <label> {{ error }} </label>
+      {% endif %}
+    </form>     
+    <div id="progress">
+    </div>   
+   </div>  
+  </div>
+  <div id="separator">
+  </div>
+  <div id="text">
+   <h1>Youku 转 mp3</h1>
+   <p>
+    使用本站，您可以方便的把优酷视频转换为mp3并下载。您可以是使用电脑、平板或者手机访问本站，本站提供全平台支持。
+   </p>
+   <p>
+    提取视频中原声的音频，保持原视频中的最高质量的音频。本站不用安装软件，不用本地下载插件，随时使用，并且完全免费。请注意，您只能转换长度小于2小时的视频，如果视频太长，将无法在段时间内完成。
+   </p>
+   <p>
+    我们的服务完全免费，并且不需要安装任何软件，也不用注册。使用本站进行转换，您应当已经同意<a href="termsofuse/">使用条款</a>。
+   </p>
+   <ul>
+    <li>使用步骤：</li>
+    <li>1) 访问<a href="http://www.youku.com">优酷</a>。</li>
+    <li>2) 复制您需要我们转换的视频的URL（例如：http://v.youku.com/v_show/id_XMjgxNDE4MTM0OA==.html?spm=a2hww.20023042.m_223465.5~5~5~5~5~5~A&f=50061723 ）。
+    <img id="logo" width="100%" src="/static/images/copyurl.png" alt=""></li> 
+    <li>3) 粘贴到本页的输入框中，点击转换按钮。</li>
+    <li>4) 请稍等转换成功后您就可以下载mp3了。</li>
+   </ul>
+   <p>
+    希望您喜欢我们的服务。
+   </p>
+  </div>
+ </div>
+ {% endblock %}
